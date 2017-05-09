@@ -13,11 +13,16 @@
 	<bean id="mySessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource" />
-		<property name="mappingResources">
+		 <property name="packagesToScan">
+            <list>
+                <value>com.demo.model</value>
+            </list>
+        </property>
+		<!-- <property name="mappingResources">
 			<list>
 				<value>product.hbm.xml</value>
 			</list>
-		</property>
+		</property> -->
 		<property name="hibernateProperties">
 			<value>
 				hibernate.dialect=org.hibernate.dialect.HSQLDialect
