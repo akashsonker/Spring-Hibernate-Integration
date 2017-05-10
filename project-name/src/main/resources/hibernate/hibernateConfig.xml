@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://XXXXXX:3306/XXXXX" />
+		<property name="url" value="jdbc:mysql://10.25.3.197:3306/demo" />
 		<property name="username" value="root" />
 		<property name="password" value="hadoop" />
 	</bean>
+
 	<bean id="mySessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource" />
-		 <property name="packagesToScan">
-            <list>
-                <value>com.demo.model</value>
-            </list>
-        </property>
-		<!-- <property name="mappingResources">
+		<property name="packagesToScan">
 			<list>
-				<value>product.hbm.xml</value>
+				<value>com.demo.model</value>
 			</list>
-		</property> -->
+		</property>
 		<property name="hibernateProperties">
 			<value>
 				hibernate.dialect=org.hibernate.dialect.HSQLDialect
 			</value>
 		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySessionFactory" />
+
+	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<constructor-arg name="sessionFactory" ref="mySessionFactory" />
 	</bean>
 </beans>
