@@ -1,0 +1,8 @@
+http://websystique.com/springmvc/spring-mvc-4-and-spring-security-4-integration-example/
+
+  @Autowired
+    private PasswordEncoder passwordEncoder;
+
+https://hellokoding.com/registration-and-login-example-with-spring-xml-configuration-maven-jsp-and-mysql/
+Bootstrap
+https://github.com/angelozerr/tern.java/wiki/Getting-Started
