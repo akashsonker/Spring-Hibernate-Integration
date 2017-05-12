@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hello.....</h1>
+<h1>this is outer page.</h1>
 </body>
 </html>

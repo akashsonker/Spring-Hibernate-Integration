@@ -8,22 +8,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user_tbl")
+@Table(name = "user")
 public class UserModel {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userID;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int userid;
 	@Column(name="name", unique=true, nullable=false)
 	private String name;
 	@Column(name="city", unique=true, nullable=false)
 	private String city;
 
-	public int getUserID() {
-		return userID;
+	
+
+	public int getUserid() {
+		return userid;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 
 	public String getName() {

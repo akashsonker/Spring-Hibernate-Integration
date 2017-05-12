@@ -23,6 +23,8 @@
 		<property name="hibernateProperties">
 			<value>
 				hibernate.dialect=org.hibernate.dialect.HSQLDialect
+				<!-- hibernate.dialect=org.hibernate.dialect.MySQLDialect -->
+				<!-- hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect -->
 			</value>
 		</property>
 	</bean>

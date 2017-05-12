@@ -12,7 +12,7 @@ public class LoginController {
 	private UserService user;
 	@RequestMapping(value = "/login")
 	public String loginForm() {
-		user.operations();
+		user.addUser();
 		return "home";
 	}
 }
